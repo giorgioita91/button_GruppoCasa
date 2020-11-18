@@ -1,24 +1,62 @@
-import logo from './logo.svg';
-import './App.css';
+import { useState } from "react";
+import "./App.css";
+// import Bottoni from './components/Bottoni';
 
 function App() {
+  //colore containerApp
+  const [color, setColor] = useState("#3e3e3e");
+  //colore bottone
+  const [bottoneVerde, setBottoneVerde] = useState("#01e4e4");
+  const [bottoneBlue, setBottoneBlue] = useState("#01e4e4");
+  const [bottoneRosso, setBottoneRosso] = useState("#01e4e4");
+
+  const handleColorB = () => {
+    
+  }
+
+  const handleColorV = (colore) => {
+    setColor(colore);
+    setBottoneVerde(colore);
+    // if (color !== colore) {
+    //   setColor(colore);
+    //   // setColoreBottone(colore);
+    // }
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <div
+        className="app"
+        style={{
+          backgroundColor: color,
+        }}
+      ></div>
+      <button
+        className="bottone1"
+        style={{
+          backgroundColor: bottoneVerde,
+        }}
+        onClick={() => handleColorV("#90ee90")}
+      >
+        Verde
+      </button>
+      <button
+        className="bottone2"
+        style={{
+          backgroundColor: bottoneVerde,
+        }}
+      >
+        Blue
+      </button>
+      <button
+        className="bottone3"
+        style={{
+          backgroundColor: bottoneVerde,
+        }}
+      >
+        Rosso
+      </button>
+    </>
   );
 }
 
